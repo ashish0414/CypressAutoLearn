@@ -1,0 +1,16 @@
+{
+
+    "defaultCommandTimeout":20000,
+    "chromeWebSecurity":false,
+    "env":{
+        "MB_stg_url":"https://majorbrands.app.stg.rubiconaceturtle.com/login"
+    },
+    "projectId": "12eojx",
+    "reporter":"mochawesome",
+    "retries":{
+        "runMode": 1,
+        "openMode": 1
+    
+      }
+    
+}

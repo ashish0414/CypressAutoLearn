@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-02-11T05:12:03.919Z",
+    "end": "2022-02-11T05:13:39.226Z",
+    "duration": 95307,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "51ac4790-60bb-4801-86d5-eea087d80370",
+      "title": "",
+      "fullFile": "cypress/integration/AjioIntegrationSmokeTest/ForwardOrderFlow.js",
+      "file": "cypress/integration/AjioIntegrationSmokeTest/ForwardOrderFlow.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "97824ab8-dec5-4735-9ebb-d04f609664ad",
+          "title": "Ajio Forward Order Flow test with Rubicon Fast Panel",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create Ajio Orders",
+              "fullTitle": "Ajio Forward Order Flow test with Rubicon Fast Panel Create Ajio Orders",
+              "timedOut": null,
+              "duration": 11300,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//cy.log(JSON.stringify(this.ajioData.orderPayload))\ncy.log('ashish singh');\ncy.log(this.testData.name);\ncy.log(this.testData.MB_staging_login.username);\ncy.request({\n  method: 'POST',\n  url: 'https://in.data.aceturtle.in/staging/ajio/create_shipment',\n  // baseUrl is prepend to URL\n  headers: {\n    \"x-api-key\": \"GZfbkFLnil29isBFPfxTr3mLANMQy9Lx18ITiima\"\n  },\n  form: false,\n  // indicates the body should be form urlencoded and sets Content-Type: application/x-www-form-urlencoded headers\n  body: this.ajioData.orderPayload\n}).then(res => {\n  expect(res.status).to.eql(200);\n});\ncy.wait(10000);",
+              "err": {},
+              "uuid": "41bc8ee9-6fdc-4401-a555-d45f41faa381",
+              "parentUUID": "97824ab8-dec5-4735-9ebb-d04f609664ad",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login to R3 and processing the Ajio Order till its delivered",
+              "fullTitle": "Ajio Forward Order Flow test with Rubicon Fast Panel Login to R3 and processing the Ajio Order till its delivered",
+              "timedOut": null,
+              "duration": 36912,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//using custom commands from support/command.js passing username , password(from fixtures/example) and url from cypress.json in the params\ncy.login(this.testData.MB_staging_login.username, this.testData.MB_staging_login.password, Cypress.env('MB_stg_url')); //clicking on the side bar page\ndashboardPage.getSideBarToggeleButton({\n  force: true\n}).click();\nsidebarPage.clickFastPanel().click({\n  force: true\n}); //Navigating to shipment Fast panel\nsidebarPage.getShipmentFastPanel().click({\n  force: true\n}); //checking the order_no\nshipmentFastPanelPage.getPageHeading().should('have.text', \"Process Orders\");\nshipmentFastPanelPage.getOrderNoSearchEditBox().type(order_no);\nshipmentFastPanelPage.getSearchButton().click(); //shipmentFastPanelPage.getAcceptCookiesButton().click()\nshipmentFastPanelPage.getAcceptOrderButton().click();\nshipmentFastPanelPage.getStatusChangedMsg().should('have.text', \"Order status changed successfully\");\nshipmentFastPanelPage.getOrderNo().should('have.attr', 'title', order_no);\nshipmentFastPanelPage.getChannelName().should('have.attr', 'title', 'Ajio'); //Printing the Invoice\ncy.wait(10000);\ncy.pause();\nshipmentFastPanelPage.getPrintInvoiceBtnOnAcceptSuccess().invoke('show');\ncy.contains('Print Invoice/Shipping Label').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `.btn-Accept`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 20000ms: Expected to find element: `.btn-Accept`, but never found it.\n    at ShipmentFastPanelPage.getAcceptOrderButton (https://majorbrands.app.stg.rubiconaceturtle.com/__cypress/tests?p=cypress\\integration\\AjioIntegrationSmokeTest\\ForwardOrderFlow.js:312:15)\n    at Context.eval (https://majorbrands.app.stg.rubiconaceturtle.com/__cypress/tests?p=cypress\\integration\\AjioIntegrationSmokeTest\\ForwardOrderFlow.js:173:27)",
+                "diff": null
+              },
+              "uuid": "fca63a54-d08e-47e6-acea-b073fc9a1ae5",
+              "parentUUID": "97824ab8-dec5-4735-9ebb-d04f609664ad",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "41bc8ee9-6fdc-4401-a555-d45f41faa381"
+          ],
+          "failures": [
+            "fca63a54-d08e-47e6-acea-b073fc9a1ae5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 48212,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.0.1"
+    }
+  }
+}

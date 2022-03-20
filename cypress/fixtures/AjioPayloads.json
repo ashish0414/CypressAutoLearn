@@ -1,0 +1,55 @@
+{
+    "orderPayload":{
+    "orderId": "OrderTestAjio02",
+    "shipment_number": "SHIPTestAjio02",
+    "status": "CREATED",
+    "carrier": "ABCDTEST",
+    "tracking_number": "",
+    "po_number": "400181417",
+    "po_amount": 87.2,
+    "orderDate": "2022-01-16T12:52:11+05:30",
+    "release_no": "1",
+    "total_amount": 2673,
+    "total_cod_charge": null,
+    "total_shipping_charge": null,
+    "total_giftwrap_charge": null,
+    "total_CashDiscount": null,
+    "total_PromoDiscount": null,
+    "store_node": "DV00305971",
+    "payment_method": "NONCOD",
+    "customer_details": {
+        "first_name": "Abhigyan",
+        "last_name": "Pandey",
+        "email": "abhigyan.pandey@ril.com",
+        "address_line_1": "test",
+        "address_line_2": "test",
+        "city": "HYDERABAD",
+        "state": "TG",
+        "country": "IN",
+        "zip_code": 500001,
+        "phone": 9620628843
+    },
+    "orderLineEntries": [
+        {
+            "id": "460403431001",
+            "ordered_quantity": 3,
+            "po_line_amount": 28.48,
+            "mrp": 300,
+            "SellerDiscount": 9,
+            "MarketplaceDiscount": null,
+            "item_shipping_charge": null,
+            "CartCashDiscounts": null,
+            "CartPromoDiscounts": null,
+            "item_cod_charge": null,
+            "giftwrap_charge": null,
+            "prime_line_no": 1,
+            "sub_line_no": 1,
+            "shipment_line_no": 1,
+            "total_tax": "28.48",
+            "ean": "9865707064011"
+        }
+    ],
+    "seller_vendor_code": "DV00305970",
+    "ship_node": "S646"
+}
+}
