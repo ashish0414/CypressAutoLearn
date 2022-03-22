@@ -1,6 +1,6 @@
 ///<reference types = "cypress"/>
 
-import LoginPage from '../../support/pageObjectsRubicon3/LoginPage'
+//import LoginPage from '../../support/pageObjectsRubicon3/LoginPage'
 import DashboardPage from '../../support/pageObjectsRubicon3/DashboardPage'
 import SideBarPage from '../../support/pageObjectsRubicon3/SideBarPage'
 import ShipmentFastPanelPage from '../../support/pageObjectsRubicon3/ShipmentFastPanelPage'
