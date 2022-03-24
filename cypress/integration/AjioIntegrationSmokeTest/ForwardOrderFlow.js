@@ -107,9 +107,8 @@ describe('Ajio Forward Order Flow test with Rubicon Fast Panel', () => {
 
         //Printing the Invoice
         cy.wait(10000)
-        cy.pause()
-        shipmentFastPanelPage.getPrintInvoiceBtnOnAcceptSuccess().invoke('show')
-        cy.contains('Print Invoice/Shipping Label').click()
+        //cy.pause()
+        shipmentFastPanelPage.getPrintInvoiceBtnOnAcceptSuccess().invoke('show').click()
 
 
 

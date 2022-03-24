@@ -28,7 +28,8 @@ class ShipmentFastPanelPage{
         return cy.get('.cdk-visually-hidden')
     }
     getPrintInvoiceBtnOnAcceptSuccess(){
-        return cy.get('a[ng-reflect-message="Print Invoice/Shipping Label"]')
+        //return cy.get('a[ng-reflect-message="Print Invoice/Shipping Label"]')
+        return cy.get('app-workflow-layout.ng-star-inserted:nth-child(3) div.wf-content-wrapper.Process.Orders div.ng-star-inserted div.container-wrapper:nth-child(3) div.tableData.ng-star-inserted div.table-container table.wrkflw-fixed-table tbody:nth-child(2) tr.ng-star-inserted td.show.ng-star-inserted:nth-child(1) span.ng-star-inserted:nth-child(5) > a.action-links.ng-star-inserted')
     }
     getItemDetailsBtnOnAcceptSuccess(){
         return cy.get('a[style="background: url("/assets/images/invoice.svg");"]')
