@@ -12,6 +12,7 @@
     "chai": "^4.3.6",
     "cypress": "^9.4.1",
     "mochawesome": "^7.0.1",
+    "start-server-and-test": "^1.14.0",
     "supertest": "^6.2.2"
   },
   "dependencies": {
