@@ -4,4 +4,5 @@ orbs:
 workflows:
   build:
     jobs:
+      resource_class: small
       - cypress-io/run
