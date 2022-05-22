@@ -25,6 +25,7 @@ describe('Ajio Forward Order Flow test with Rubicon Fast Panel', () => {
             this.ajioData.orderPayload.po_number = `${Math.floor(Math.random() * 1000000)}`
             this.ajioData.orderPayload.orderDate = new Date()
         })
+        
 
     })
 
